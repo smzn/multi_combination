@@ -39,6 +39,29 @@ public class Combination_lib {
 		return value;
 	}
 	
+	public int[][] getValueNc(int value[][], int nc[]){
+		int nc_number = 0;
+		//条件に当てはまる組合せを数える
+		for(int i = 0; i < value.length; i++) {
+			int flg = 1;
+			for(int j = 0; j < c; j++) {
+				if(value[i][j] > nc[j]) flg = -1;
+			}
+			if(flg == 1)nc_number++;
+		}
+		int valuenc[][] = new int[nc_number][c];
+		int index = 0;
+		for(int i = 0; i < value.length; i++) {
+			int flg = 1;
+			for(int j = 0; j < c; j++) {
+				if(value[i][j] > nc[j]) flg = -1;
+			}
+			if(flg == 1) valuenc[index++] = value[i];
+		}
+		return valuenc;
+	}
+	
+	
 	/*ループでやる時
 	public int[][] getCombination() {
 		int value[][] = new int[6][c];
