@@ -9,7 +9,7 @@ public class Combination_main {
 		//c種類のものから重複を許してn個選ぶ時の組合せ
 		//cHn = c+n-1Cn
 		//2H5 = 6C5 = 6通り(5,0),(4,1),(3,2),(2,3),(1,4),(0,5)
-		int n = 5, c = 3; 
+		int n = 1, c = 3; 
 		int nc[] = {3,3,3};//各クラスの最大値
 		
 		Combination_lib clib = new Combination_lib(n,c);
