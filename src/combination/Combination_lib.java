@@ -9,8 +9,10 @@ public class Combination_lib {
 		this.n = n;
 		this.c = c;
 		//重複組合せの個数：cHn = c+n-1Cn = (c+n-1)!/(n!*(c-1)!)
-		combi = this.factorial(n + c - 1) / (this.factorial(n) * this.factorial(c - 1));
+		//combi = this.factorial(n + c - 1) / (this.factorial(n) * this.factorial(c - 1));
+		combi = this.getCombi_number2(c + n - 1, n);
 		value = new int[combi][c];
+		System.out.println("組み合わせ数"+combi);
 	}
 	
 	public int factorial(int n){
@@ -61,6 +63,14 @@ public class Combination_lib {
 		return valuenc;
 	}
 	
+	public int getCombi_number2(int n, int r) {
+		double sum = 1;
+		for(int i = 1; i <= r; i++) {
+			sum *= (n-r+i);
+			sum /= i;
+		}
+		return (int) Math.round(sum);
+	}
 	
 	/*ループでやる時
 	public int[][] getCombination() {
